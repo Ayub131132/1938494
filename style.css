@@ -1,0 +1,155 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  margin: 0 5px;
+  border-radius: 4px;
+}
+
+.tab:hover {
+  background-color: #0056b3;
+}
+
+.content {
+  margin: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+select {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.form {
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.task-info p {
+  margin: 0;
+}
+
+.start-button, .claim-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.start-button:hover, .claim-button:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+.completed {
+  color: green;
+  font-weight: bold;
+}
+/* Move tabs to the bottom of the page */
+.tab-container {
+  position: fixed;        /* Fix the tabs at the bottom */
+  bottom: 0;              /* Position at the bottom */
+  left: 0;                /* Align with the left edge */
+  width: 100%;            /* Make tabs span the full width */
+  display: flex;          /* Use flexbox to align tabs horizontally */
+  justify-content: space-around; /* Space out the tabs evenly */
+  background-color: #007bff; /* Background color for tabs */
+  padding: 10px 0;         /* Add padding for better spacing */
+}
+
+.tab {
+  text-align: center;
+  flex: 1;                 /* Make each tab take equal space */
+}
+
+.tab span {
+  display: block;
+  font-size: 24px;         /* Larger icon size */
+}
+
+.tab p {
+  font-size: 12px;         /* Smaller text size */
+  margin: 5px 0 0;
+  color: white;
+}

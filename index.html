@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earning App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Earning App</h1>
+  </header>
+
+  <main>
+    <!-- Login/Signup Forms -->
+    <div id="auth-container">
+      <!-- Login Form -->
+      <div id="login-form" class="form">
+        <h2>Login</h2>
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" required>
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" required>
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signup-form" class="form hidden">
+        <h2>Sign Up</h2>
+        <label for="signup-email">Email:</label>
+        <input type="email" id="signup-email" required>
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" required>
+        <label for="referral-code">Referral Code (Optional):</label>
+        <input type="text" id="referral-code">
+        <button onclick="signup()">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div id="main-container" class="hidden">
+      <di class="tab-container">
+        <div class="tab" onclick="showTab('home')">🏠 Home</div>
+        <div class="tab" onclick="showTab('tasks')">📝 Tasks</div>
+ <div class="tab" onclick="showTab('withdraw')">💸 Withdraw</div>
+      </div>
+
+      <!-- Home Tab -->
+      <section id="home" class="content">
+        <h2>Welcome, <span id="user-email"></span></h2>
+        <p>Earn points by completing tasks and referring friends!</p>
+      </section>
+
+      <!-- Tasks Tab -->
+      <section id="tasks" class="content hidden">
+        <h2>Available Tasks</h2>
+        <div class="task" id="telegram-task">
+  <div class="task-info">
+    <p>Join Telegram Channel</p>
+    <p class="task-points">+100 💸 Points</p>
+  </div>
+  <button class="start-button" onclick="startTelegramTask()">Start</button>
+  <button class="claim-button hidden" id="claim-telegram" onclick="claimTelegramReward()">Claim</button>
+  <span class="completed hidden" id="completed-telegram">✔ Completed</span>
+</div>
+          <button onclick="completeTask()">Complete Task</button>
+        </div>
+      </section>
+
+      <!-- Leaderboard Tab -->
+      <section id="leaderboard" class="content hidden">
+        <h2>Leaderboard</h2>
+        <p>Top earners:</p>
+        <ul>
+          <li>User 1: 1000 💸 points</li>
+          <li>User 2: 900 💸 points</li>
+          <li>User 3: 850 💸 points</li>
+        </ul>
+      </section>
+
+      <!-- Friends Tab -->
+      <section id="friends" class="content hidden">
+        <h2>Friends</h2>
+        <p>Invite your friends and earn 300 💸 points for each referral!</p>
+        <button onclick="inviteFriend()">Invite Friend</button>
+      </section>
+
+      <!-- Withdraw Tab -->
+      <section id="withdraw" class="content hidden">
+        <h2>Withdraw Points</h2>
+        <p>Your Points: <span id="user-points">0</span> 💸</p>
+        <label for="withdraw-method">Choose Method:</label>
+        <select id="withdraw-method">
+          <option value="phonepe">PhonePe</option>
+          <option value="playstore">Play Store Redeem Code</option>
+        </select>
+        <button onclick="withdraw()">Withdraw</button>
+        <p id="withdraw-msg"></p>
+      </section>
+    </div>
+  </main>
+  <div id="withdraw-container" class="hidden">
+  <h2>Withdraw Points</h2>
+  <p>Your Points: <span id="available-points">0</span> 💸</p>
+  <label for="withdraw-method">Choose Method:</label>
+  <select id="withdraw-method">
+    <option value="phonepe">PhonePe</option>
+    <option value="playstore">Play Store Redeem Code</option>
+  </select>
+  <button onclick="withdraw()">Withdraw</button>
+  <p id="withdraw-msg"></p>
+  <button onclick="showDashboard()">Back</button>
+</div>
+  <div id="withdraw-container" class="hidden">
+  <h2>Withdraw Points</h2>
+  <p>Your Points: <span id="available-points">0</span> 💸</p>
+  <p><strong>Minimum Withdrawal: 500 💸</strong></p> <!-- Display minimum withdrawal -->
+  <label for="withdraw-method">Choose Method:</label>
+  <select id="withdraw-method">
+    <option value="phonepe">PhonePe</option>
+    <option value="playstore">Play Store Redeem Code</option>
+  </select>
+  <button onclick="withdraw()">Withdraw</button>
+  <p id="withdraw-msg"></p>
+  <button onclick="showDashboard()">Back</button>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
